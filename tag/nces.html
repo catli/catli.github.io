@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
         <meta charset="utf-8" />
-        <title>How to Scrape School and District Data</title>
+        <title>cathleen.li - NCES</title>
         <link rel="stylesheet" href="/theme/css/main.css" />
 
         <!--[if IE]>
@@ -18,23 +18,18 @@
                         <li><a href="/pages/about.html">about</a></li>
     
                         <li><a href="/pages/projects.html">projects</a></li>
-                    <li class="active"><a href="/category/writing.html">writing</a></li>
+                    <li><a href="/category/writing.html">writing</a></li>
                 </ul>
                 </nav>
         </header><!-- /#banner -->
-<section id="content" class="body">
-  <article>
-    <header>
-      <h1 class="entry-title">
-        <a href="/2015/how_to_scrape_school_data.html" rel="bookmark"
-           title="Permalink to How to Scrape School and District Data">How to Scrape School and District Data</a></h1>
-    </header>
 
-    <div class="entry-content">
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/2015/how_to_scrape_school_data.html">How to Scrape School and District Data</a></h1>
 <footer class="post-info">
         <span>Wed 01 July 2015</span>
 <span>| tags: <a href="/tag/nces.html">NCES</a><a href="/tag/scrape.html">scrape</a><a href="/tag/data.html">data</a><a href="/tag/schools.html">schools</a></span>
-</footer><!-- /.post-info -->      <p>When looking at trends for school and district level data, there are many local factors that could influence outcomes. For example, variables such as a school's size or social-economic makeup could be predictors of success. Much of this data is publicly available on the National Center for Education Statistics (NCES) <a href="https://nces.ed.gov/">website</a>, but in a difficult to extract format. In order to get the data for a large number of schools, we have to use scrapping methods . Below is an example of application using BeautifulSoup. This retrieves data for all schools in districts using a csv file listing nces id for each district but can be manipulated to feed in district name parameter instead.</p>
+</footer><!-- /.post-info --><p>When looking at trends for school and district level data, there are many local factors that could influence outcomes. For example, variables such as a school's size or social-economic makeup could be predictors of success. Much of this data is publicly available on the National Center for Education Statistics (NCES) <a href="https://nces.ed.gov/">website</a>, but in a difficult to extract format. In order to get the data for a large number of schools, we have to use scrapping methods . Below is an example of application using BeautifulSoup. This retrieves data for all schools in districts using a csv file listing nces id for each district but can be manipulated to feed in district name parameter instead.</p>
 <p>Here are some libraries you will need to import</p>
 <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span> <span class="k">as</span> <span class="n">bs</span>
 <span class="kn">import</span> <span class="nn">requests</span> 
@@ -196,11 +191,10 @@
     <span class="n">rowindex</span><span class="o">+=</span><span class="mi">1</span>
 
 <span class="n">csv_export</span><span class="p">(</span><span class="s2">&quot;district_nces_scrape_output.csv&quot;</span><span class="p">,</span><span class="n">dist_mat</span><span class="p">)</span>
-</pre></div>
-    </div><!-- /.entry-content -->
-
-  </article>
-</section>
+</pre></div>                </article>
+            </aside><!-- /#featured -->
+            </ol><!-- /#posts-list -->
+            </section><!-- /#content -->
         <section id="extras" class="body">
 <!--     -->
                 <div class="social">
