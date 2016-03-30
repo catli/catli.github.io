@@ -352,17 +352,18 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
 #extras a:hover, #extras a:active {background: #008db8; color: #fff;}
 
 	/* Blogroll */
-	#extras .blogroll {
+/*	#extras .blogroll {
 		float: left;
 		width: 615px;
 	}
 	
 	#extras .blogroll li {float: left; margin: 0 20px 0 0; width: 185px;}
-	
+*/	
 	/* Social */
 	#extras .social {
 		float: left;
-		width: 500px;
+		width: 100px;
+		padding-left: 25px;
 	}
 	
 	#extras div[class='social'] a {
@@ -372,7 +373,7 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
 	}
 	
 		/* Icons */
-		#extras .social a {background-size: 18px;}
+		#extras .social a {background-size: 18px; padding-left: 25px; float: left;}
 		#extras .social a[href*='facebook.com'] {background-image: url('../images/icons/facebook.png');}
 		#extras .social a[href*='github.com'], 
 		#extras .social a[href*='git.io'] {background-image: url('../images/icons/github.png');}
@@ -476,36 +477,3 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
 	#add-comment input[type='submit'] {float: right; margin: 0 .5em;}
 	#add-comment * {margin-bottom: .5em;}
 
-/* Project */
-.img-list {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-}
-
-div.img-list li {
-  display: inline-block;
-  height: 150px;
-  margin: 0 1em 1em 0;
-  position: relative;
-  width: 150px;
-}
-
-.text-content {
-  background: rgba(0,0,0,0.5);
-  color: white;
-  cursor: pointer;
-  display: table;
-  height: 50px;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 50px;
-}
-
-.text-content span {
-  display: table-cell;
-  text-align: center;
-  vertical-align: middle;
-}
