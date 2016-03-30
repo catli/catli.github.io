@@ -17,7 +17,7 @@
     
                         <li><a href="/pages/about.html">about</a></li>
     
-                        <li><a href="/pages/cv.html">cv</a></li>
+                        <li><a href="/pages/projects.html">projects</a></li>
                     <li class="active"><a href="/category/writing.html">writing</a></li>
                 </ul>
                 </nav>
@@ -33,10 +33,10 @@
     <div class="entry-content">
 <footer class="post-info">
         <span>Fri 25 March 2016</span>
-
+<span>| tags: <a href="/tag/model.html">model</a><a href="/tag/student.html">student</a><a href="/tag/learning.html">learning</a><a href="/tag/growth.html">growth</a><a href="/tag/elearning.html">elearning</a><a href="/tag/psychometric.html">psychometric</a></span>
 </footer><!-- /.post-info -->      <p>Today was my last day at eSpark Learning. During my time there I had a chance to work on some interesting projects, including devleping a psychometric model to measure continuous studnet learning. eSpark posted a full writeup of my work on Medium, but here's an excerpt of that: </p>
 <hr />
-<p>...</p>
+<p>eSpark curriculum covers pre-K to eighth grade, in both reading and math. For the sake of simplicity, in this post we’ll look closely at our work on literacy in early grades. For example, for students to gain the prerequisites necessary for reading in first grade, they need to learn a variety of pre-reading skills such as “distinguishing long from short vowel sounds in spoken single-syllable words.” Although as adults we may take this skill for granted, it can be quite complex for young students as they have to master the ability to recognize specific vowel sounds, as well as to distinguish the characteristic of these sounds.</p>
 <p>We wanted to develop a metric of student learning outcomes that was consistent, precise, and available in real time to guide curriculum development. We initially relied upon standardized tests, such as NWEA MAP, to inform our understanding of curriculum. However, while this data is very useful in shaping curriculum, it has two major limitations. First, standardized tests vary across districts, and thus can introduce bias if we compare nationally. Second, standardized tests typically only report data once or twice a year, which inhibits continuous improvement through data.</p>
 <p>We evaluated numerous psychometric item-response models developed over the last few decades to measure latent variables such as learning. Unfortunately, the traditional item response models were designed to take a snapshot of a student’s ability. Our focus is on the student’s progress over the entire school year so we are not just interested in the snapshot of a student, but in their continuous change through learning.  So, in the spirit of innovation, we have iterated on these latent variable models to develop our own approach to measuring learning. We named this measurement Hobbes, after a beloved tiger known for his rational approach to problems.</p>
 <p>Hobbes is derived from the Rasch model, an item response model used since the 1960s to measure a test taker’s ability and the probability they would answer a question correctly. Northwest Evaluation Association (NWEA), a non-profit testing provider used by districts across the country, adopted this model to generate their RIT score for each student on their MAP Assessment. The model is more robust than calculating the average percentage correct because it accounts for both varying student ability and different question difficulty levels.  It uses a logistic curve (see below) to translate two parameters - student ability and question difficulty - into the probability a student would answer a question correctly (between 0 and 1). </p>
@@ -44,7 +44,6 @@
 <p>This  curve is described by the function below. Given a certain question difficulty i and a certain student ability n, the function estimates the expected probability that the student would answer the question correctly:</p>
 <div class="math">\begin{equation}  \hat{p}_{in} =  P(x_{i,n}= 1) = \frac{e^{ \beta_n + \theta_i }}{1 +e^{ \beta_n + \theta_i }}  \end{equation}</div>
 <p>Notice that as as the student ability decreases relative to question difficulty, the probability function approaches 0.  Conversely as student ability increases relative to question difficulty, the probability function approaches 1. Both the question and student ability parameters are normalized around the mean so a value of  n=i=0 would translate to a 50% chance of answering an answer correctly. </p>
-<p>...</p>
 <p>When we feed student quiz data into the model, it can estimate the ability parameters n and difficulty parameter  <span class="math">\(i\)</span> by minimizing the difference between actual and predicted values  <span class="math">\(X_{in}-\hat{p}_{in}\)</span>. These parameters provide a snapshot of how difficult the questions were and the relative ability of the students at the time the data was collected.</p>
 <h2>So how did we adapt the Rasch model to measure student growth?</h2>
 <p>The typical student working on eSpark takes both a pre- and post- quiz for each standard. If a student needs practice in reading foundational skills, we assign them to practice activities in these learning standards. Before each set of activities, the student take a prequiz with 5 questions drawn randomly from K unique questions. After their practice activities, they are then given a post-quiz with a new set of 5 questions. </p>

@@ -18,7 +18,9 @@
 /***** Global *****/
 /* Body */
 body {
-    background: #f2f3f3;
+	background-image: url('../images/colors.jpg');
+	background-size: 500px 1000px;
+    /*background: #f2f3f3;*/
     color: #000305;
     font-size: 87.5%; /* Base font size: 14px */
     font-family: 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -391,6 +393,7 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
 #contentinfo a {font-weight: bold;}
 
 /***** Sections *****/
+
 /* Blog */
 .hentry {
 	display: block;
@@ -472,3 +475,37 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
 	
 	#add-comment input[type='submit'] {float: right; margin: 0 .5em;}
 	#add-comment * {margin-bottom: .5em;}
+
+/* Project */
+.img-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+div.img-list li {
+  display: inline-block;
+  height: 150px;
+  margin: 0 1em 1em 0;
+  position: relative;
+  width: 150px;
+}
+
+.text-content {
+  background: rgba(0,0,0,0.5);
+  color: white;
+  cursor: pointer;
+  display: table;
+  height: 50px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 50px;
+}
+
+.text-content span {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
